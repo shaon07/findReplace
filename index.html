@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Find and Replace</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div class="mainbg">
+      <div class="innerbg">
+        <p>Find</p>
+        <input
+          type="text"
+          name=""
+          id="find"
+          placeholder="Enter Your Text"
+        /><br />
+        <p>Replace</p>
+        <input
+          type="text"
+          name=""
+          id="replace"
+          placeholder="Enter Your Text"
+        /><br /><br />
+        <textarea style="width: 100%" name="" id="input" placeholder="Enter Your Text"></textarea
+        ><br />
+        <button id="btn" onclick="myfun()">click here</button>
+      </div>
+    </div>
+    <script>
+      function myfun() {
+  let find = document.querySelector("#find").value;
+  let replace = document.querySelector("#replace").value;
+  let store = document.querySelector("#input");
+  while (store.value.indexOf(find) != -1) {
+    let newStore = store.value.replace(find, replace);
+    console.log(newStore);
+    store.value = newStore;
+  }
+}
+
+    </script>
+  </body>
+</html>
